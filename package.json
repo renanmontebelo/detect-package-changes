@@ -1,6 +1,6 @@
 {
   "name": "package-json-changed",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "Notifies whether package.json dependency versions do not match node_module contents",
   "main": "./src/cli",
   "bin": "./src/cli.js",
