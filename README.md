@@ -4,7 +4,9 @@ _TLDR: run `npx package-json-changed install` in the root folder of the project_
 
 ---------------------------------------------------------
 
-Checks if your `package-lock.json` dependencies versions match the actual files in you `node_module` folder after you checkout or pull (merge) branches. Requires npm package files (`package.json` and `package-lock.json`) and `node_modules` folder for version checks and a git-enabled project to install post-checkout and post-merge hooks.
+Requires npm, git and a bash-compatible shell, including WSL.
+
+Checks if your `package-lock.json` dependencies versions match the actual files in you `node_module` folder after you checkout or pull (merge) branches.
 
 For performance reasons only top-level dependencies in `package.json` are checked. Versions between `package.json` and `package-lock.json` files are also not checked as `npm install` should take care of this consistency.
 
@@ -29,8 +31,7 @@ command:
 
 args:
   --verbose: enables debug messages that might help in error investigations
-  --hooks=<comma-separated list of git hooks>: add the checks to these specific hooks. Default is --hooks=post-checkout,post-merge
-
+  --hooks=<comma-separated list of git hooks>: add the checks to these specific hooks. Default is --hooks=post-checkout,post-merge,post-rebase
   --folder=<folder>: the root folder of the project to add the checks to (this is generally auto-detected correctly but you may override it here)
   ```
 

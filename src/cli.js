@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const install = require('./install');
 const uninstall = require('./uninstall');
 const check = require('./check');
@@ -9,7 +11,7 @@ let context = {
   verbose: false,
   help: false,
   folder: process.cwd(),
-  hooks: ['post-checkout', 'post-merge'],
+  hooks: ['post-checkout', 'post-merge', 'post-rebase'],
   cmd: 'npx package-json-changed',
 }
 
@@ -111,7 +113,7 @@ function executeCommand() {
 
   args:
     --verbose: enables debug messages that might help in error investigations
-    --hooks=<comma-separated list of git hooks>: add the checks to these specific hooks. Default is --hooks=post-checkout,post-merge
+    --hooks=<comma-separated list of git hooks>: add the checks to these specific hooks. Default is --hooks=post-checkout,post-merge,post-rebase
     --folder=<folder>: absolute path of the root folder of the project to add the checks to (this is generally auto-detected correctly but you may override it here)
   
   See https://github.com/renanmontebelo/package-json-changed for more info.
