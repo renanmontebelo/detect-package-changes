@@ -38,6 +38,5 @@ module.exports = function check({ logger, folder, cmd }) {
   });
   if (mismatch) {
     logger.info('(!) you might want to run `npm i`.');
-    process.exit(1);
   }
 }
