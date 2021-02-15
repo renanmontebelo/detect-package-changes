@@ -38,3 +38,4 @@ args:
 ## Roadmap
 
 - Target Node >= 10; currently >= 14 due to null coalescing;
+- Make it compatible with monorepos

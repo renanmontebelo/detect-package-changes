@@ -21,5 +21,5 @@ module.exports = function uninstall({
         fs.writeFileSync(filename, contents);
     }
   });
-  logger.info(`${cmd} removed from git hooks (${hooks.join(',')}) successfully.`);
+  logger.info(`updated git hooks (${hooks.join(',')}) successfully.`);
 }

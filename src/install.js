@@ -23,8 +23,8 @@ module.exports = function install({
       }
       fs.writeFileSync(filename, contents);
     } else {
-      fs.writeFileSync(filename, installCmd + '\n', { mode: 0o770 });
+      fs.writeFileSync(filename, cmd + '\n', { mode: 0o770 });
     }
   });
-  logger.info(`${cmd} added to git hooks (${hooks.join(',')}) successfully.`);
+  logger.info(`updated git hooks (${hooks.join(',')}) successfully.`);
 }
