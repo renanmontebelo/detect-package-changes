@@ -26,10 +26,10 @@
   "readme": "https://github.com/renanmontebelo/package-json-changed/blob/main/README.md",
   "author": "Renan Montebelo",
   "engines": {
-    "node": ">=14"
+    "node": ">=10"
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^14"
+    "@types/node": "^10.17.52"
   }
 }

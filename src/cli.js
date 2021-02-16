@@ -47,7 +47,8 @@ function readParameters() {
         break;
       default:
         if (param.startsWith('--hooks=')) {
-          context.hooks = param.split('=')[1]?.split(',');
+          const splitted = param.split('=')[1];
+          context.hooks = splitted && splitted.split(',').map(h => h.trim()).filter(Boolean);
         }
         if (param.startsWith('--folder=')) {
           context.folder = param.split('=')[1];
@@ -84,7 +85,7 @@ function checkParametersConsistency() {
     context.logger.error('exactly one of "install", "uninstall", "check" or "help" must be provided.');
     process.exit(-1);
   }
-  if ((context.hooks?.length ?? 0) == 0 || context.hooks.some(p => !p)) {
+  if ((context.hooks && context.hooks.length == 0) || context.hooks.some(p => !p)) {
     context.logger.error('verify `--hooks=` right side parameters. Tip: default is `post-checkout,post-merge`.');
     process.exit(-1);
   }
