@@ -1,6 +1,6 @@
-# package-json-changed
+# detect-package-changes
 
-_TLDR: run `npx package-json-changed install` in the root folder of the project_
+_TLDR: run `npx detect-package-changes install` in the root folder of the project_
 
 ---------------------------------------------------------
 
@@ -12,7 +12,7 @@ For performance reasons only top-level dependencies in `package.json` are checke
 
 ## Install
 
-Run `npx package-json-changed install` in the root folder of the project. To remove, run `npx package-json-changed uninstall`.
+Run `npx detect-package-changes install` in the root folder of the project. To remove, run `npx detect-package-changes uninstall`.
 
 ## Usage
 
@@ -21,7 +21,7 @@ After installation you should get a warning message when checking out branches a
 ## CLI reference
 
 ```
-npx package-json-changed <command> <args>
+npx detect-package-changes <command> <args>
 
 command:
   install (default): insert the checks into git hooks

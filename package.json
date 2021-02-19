@@ -1,6 +1,6 @@
 {
-  "name": "package-json-changed",
-  "version": "0.1.2",
+  "name": "detect-package-changes",
+  "version": "0.0.1",
   "description": "Notifies whether package.json dependency versions do not match node_module contents",
   "main": "./src/cli",
   "bin": "./src/cli.js",
@@ -19,11 +19,11 @@
     "hooks"
   ],
   "repository": {
-    "url": "https://github.com/renanmontebelo/package-json-changed",
+    "url": "https://github.com/renanmontebelo/detect-package-changes",
     "type": "git"
   },
-  "homepage": "https://github.com/renanmontebelo/package-json-changed",
-  "readme": "https://github.com/renanmontebelo/package-json-changed/blob/main/README.md",
+  "homepage": "https://github.com/renanmontebelo/detect-package-changes",
+  "readme": "https://github.com/renanmontebelo/detect-package-changes/blob/main/README.md",
   "author": "Renan Montebelo",
   "engines": {
     "node": ">=10"

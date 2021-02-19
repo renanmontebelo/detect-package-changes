@@ -12,7 +12,7 @@ let context = {
   help: false,
   folder: process.cwd(),
   hooks: ['post-checkout', 'post-merge', 'post-rebase'],
-  cmd: 'npx package-json-changed',
+  cmd: 'npx detect-package-changes',
 }
 
 readParameters();
@@ -77,15 +77,15 @@ function setupLogger() {
 }
 
 function checkParametersConsistency() {
-  const { install, uninstall, check } = context;
-  const commandCount = [install, uninstall, check].map(Number).reduce((acc, val) => acc + val, 0);
+  const { install, uninstall, check, help } = context;
+  const commandCount = [install, uninstall, check, help].map(Number).reduce((acc, val) => acc + val, 0);
   if (commandCount == 0) {
     context.help = true;
   } else if (commandCount > 1) {
     context.logger.error('exactly one of "install", "uninstall", "check" or "help" must be provided.');
     process.exit(-1);
   }
-  if ((context.hooks && context.hooks.length == 0) || context.hooks.some(p => !p)) {
+  if (!context.hooks || context.hooks.length == 0 ) {
     context.logger.error('verify `--hooks=` right side parameters. Tip: default is `post-checkout,post-merge`.');
     process.exit(-1);
   }
